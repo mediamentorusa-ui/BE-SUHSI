@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <div className="relative max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <a href="#accueil" className="flex items-center gap-2 shrink-0">
           <div className="w-10 h-10 rounded-full overflow-hidden bg-foreground flex items-center justify-center">
@@ -30,10 +30,19 @@ export function Header() {
               className="object-cover w-full h-full"
             />
           </div>
-          <span className="font-semibold text-foreground text-sm leading-tight hidden sm:block">
-            Be Sushi<br />
+          <span className="hidden sm:block text-foreground leading-tight">
+            <span className="text-base md:text-lg font-extrabold tracking-[0.14em] uppercase">BE SUSHI</span>
+            <br />
             <span className="font-normal text-muted-foreground text-xs">Fréjus</span>
           </span>
+        </a>
+
+        <a
+          href="#accueil"
+          className="sm:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[1.05rem] font-extrabold tracking-[0.18em] text-foreground"
+          aria-label="Retour à l'accueil Be Sushi"
+        >
+          BE SUSHI
         </a>
 
         {/* Desktop nav */}

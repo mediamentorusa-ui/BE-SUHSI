@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-salmon: var(--salmon);
+  --color-nori: var(--nori);
+  --color-rice: var(--rice);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --font-sans: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', 'ui-sans-serif', 'system-ui', 'sans-serif';
+}
+
+:root {
+  color-scheme: light;
+  /* Brand palette: rice paper warm off-white, dark charcoal, nori green, salmon accent, gold */
+  --background: oklch(0.97 0.008 85);       /* warm off-white / rice paper */
+  --foreground: oklch(0.2 0.01 60);         /* dark charcoal */
+  --card: oklch(0.995 0.004 85);            /* near-white card */
+  --card-foreground: oklch(0.2 0.01 60);
+  --primary: oklch(0.58 0.14 30);           /* salmon / terracotta */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.27 0.04 155);        /* nori green */
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.93 0.01 85);
+  --muted-foreground: oklch(0.48 0.01 60);
+  --accent: oklch(0.27 0.04 155);           /* nori green */
+  --accent-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.01 85);
+  --input: oklch(0.88 0.01 85);
+  --ring: oklch(0.58 0.14 30);
+  --destructive: oklch(0.577 0.245 27.325);
+  --radius: 0.75rem;
+  /* Custom tokens */
+  --salmon: oklch(0.58 0.14 30);
+  --nori: oklch(0.27 0.04 155);
+  --rice: oklch(0.97 0.008 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}

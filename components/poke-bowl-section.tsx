@@ -36,14 +36,14 @@ export function PokeBowlSection() {
   if (!pokeCat) return null
 
   return (
-    <section id="poke-bowl" className="py-12 scroll-mt-20">
+    <section id="poke-bowl" className="py-12">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Left: image + heading */}
           <div className="lg:w-64 shrink-0 text-center lg:text-left">
             <div className="w-48 h-48 relative mx-auto lg:mx-0 mb-4">
               <Image
-                src="/icons/10-poke-bowl.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/10-poke-bowl-xJJKSXFeXKBgsH5m9MAEBuDhzBWAhc.png"
                 alt="Poké bowl saumon avocat"
                 fill
                 className="object-contain"

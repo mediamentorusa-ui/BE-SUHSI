@@ -31,7 +31,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "entrees",
     label: "Entrées",
-    icon: "/icons/01-entrees.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/01-entrees-al2LHN9jDjGymqntETHhtWjZ8sKucx.png",
     note: "",
     items: [
       { name: "Salade de choux crevette avocat", price: "6,90€" },
@@ -54,7 +54,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "maki",
     label: "Maki",
-    icon: "/icons/02-maki.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02-maki-24L1LaicKUT0zmGXWBclTVXOkAjdWf.png",
     note: "6 pièces",
     items: [
       { name: "Thon", price: "6,80€" },
@@ -76,7 +76,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "california",
     label: "California",
-    icon: "/icons/03-california.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/03-california-ktJsLn4RMVdLgqneJZWlJT8TADkuPF.png",
     note: "6 pièces",
     items: [
       { name: "Thon avocat", price: "8,30€" },
@@ -100,7 +100,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "spring-temaki",
     label: "Spring / Temaki",
-    icon: "/icons/04-spring-temaki.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/04-spring-temaki-qrJXYtg4nNFVjRxOhqa3X9w1ndAQtu.png",
     note: "",
     sections: [
       {
@@ -132,7 +132,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "crosti-saumon-roll",
     label: "Crosti / Saumon Roll",
-    icon: "/icons/05-crosti-saumon-roll.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/05-crosti-saumon-roll-tA1j1QxfJQ34dLCZbteJ3o8siquBeo.png",
     note: "",
     sections: [
       {
@@ -167,7 +167,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "sushi-gunkan",
     label: "Sushi / Gunkan",
-    icon: "/icons/06-sushi-gunkan.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/06-sushi-gunkan-X5RPKgiwelAHa2bZcxpZrEfAWVxS8r.png",
     note: "",
     sections: [
       {
@@ -201,7 +201,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "sashimi-tataki",
     label: "Sashimi / Tataki",
-    icon: "/icons/07-sashimi-tataki.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/07-sashimi-tataki-fcJwhKvrgUICFttJ9tnltcoV8q5Wo6.png",
     note: "",
     sections: [
       {
@@ -229,7 +229,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "special-be-sushi",
     label: "Spécial Be Sushi",
-    icon: "/icons/08-special-be-sushi.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/08-special-be-sushi-2h29vKMssByRPZ5JbvMhkJQgIsksSq.png",
     note: "",
     items: [
       { name: "B1", description: "Crevette panée, avocat, cheese, saumon mi-cuit, sauce miso. 8 pièces.", price: "15,00€" },
@@ -245,7 +245,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "menus-plateaux",
     label: "Menus / Plateaux",
-    icon: "/icons/09-menus-plateaux.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/09-menus-plateaux-qhDFmgCth3qZ5aLOFpSYzdduXTZrUt.png",
     note: "Menus servis avec salade de choux",
     items: [
       { name: "Menu A", description: "18 pièces : 6 california saumon avocat, 6 thon cuit mayonnaise avocat, 6 concombre cheese.", price: "19,90€" },
@@ -268,7 +268,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "poke-bowl",
     label: "Poké Bowl",
-    icon: "/icons/10-poke-bowl.png",
+    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/10-poke-bowl-xJJKSXFeXKBgsH5m9MAEBuDhzBWAhc.png",
     note: "Poké bowl composé",
     sizes: [
       { name: "Poké moyen", description: "2 protéines, 3 veggies, 2 toppings et la sauce.", price: "12,00€" },

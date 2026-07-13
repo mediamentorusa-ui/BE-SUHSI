@@ -3,7 +3,17 @@ import { PHONE_LINK, PHONE } from "@/lib/menu-data"
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-[#151815]" aria-labelledby="cta-heading">
+    <section
+      className="relative overflow-hidden"
+      aria-labelledby="cta-heading"
+      style={{
+        backgroundImage:
+          "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dark-rice-paper-NYeDEGt7KoxXGEXwi1iDKd9ySg0BZO.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-foreground/75" aria-hidden="true" />
       <div className="relative max-w-5xl mx-auto px-4 py-16 text-center">
         <h2
           id="cta-heading"

@@ -1,5 +1,5 @@
-import { Phone, MapPin, Truck } from "lucide-react"
-import { PHONE, PHONE_LINK, ADDRESS, MAPS_LINK, DELIVERY_NOTE } from "@/lib/menu-data"
+import { Phone, MapPin, Clock } from "lucide-react"
+import { PHONE, PHONE_LINK, ADDRESS, MAPS_LINK } from "@/lib/menu-data"
 
 export function ContactSection() {
   return (
@@ -57,16 +57,15 @@ export function ContactSection() {
             </a>
           </div>
 
-          {/* Service */}
+          {/* Hours */}
           <div className="bg-card border border-border rounded-2xl p-5 flex flex-col items-center text-center gap-3">
             <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
-              <Truck size={20} className="text-primary" aria-hidden="true" />
+              <Clock size={20} className="text-primary" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">Service</p>
-              <p className="text-sm font-semibold text-foreground">À emporter / livraison</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">Horaires</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {DELIVERY_NOTE}
+                Horaires à confirmer directement auprès du restaurant.
               </p>
             </div>
             <a
@@ -74,7 +73,7 @@ export function ContactSection() {
               className="mt-auto w-full inline-flex items-center justify-center gap-2 border border-border text-foreground text-sm font-medium px-4 py-2.5 rounded-xl hover:border-primary/40 hover:text-primary transition-colors"
             >
               <Phone size={14} />
-              Appeler pour commander
+              Demander les horaires
             </a>
           </div>
         </div>

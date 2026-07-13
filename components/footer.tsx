@@ -10,8 +10,8 @@ export function Footer() {
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-12 h-12 rounded-full overflow-hidden bg-black/30">
               <Image
-                src="/logo/be-sushi-logo.png"
-                alt="Logo Be Sushi Fréjus"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/be-sushi-logo.png-gllyJi7z5nI099ogEECqz2ZiCpSR3a.jpeg"
+                alt="Be Sushi logo"
                 width={48}
                 height={48}
                 className="object-cover w-full h-full"

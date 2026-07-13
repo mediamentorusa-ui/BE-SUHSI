@@ -166,7 +166,7 @@ export function MenuSection() {
               <article
                 key={cat.id}
                 id={cat.id}
-                className="bg-card border border-border rounded-2xl overflow-hidden scroll-mt-24"
+                className="bg-card border border-border rounded-2xl overflow-hidden"
               >
                 {/* Category header */}
                 <div className="flex items-center gap-3 p-4 border-b border-border bg-muted/30">
@@ -190,7 +190,7 @@ export function MenuSection() {
                     aria-label={`Appeler pour commander ${cat.label}`}
                   >
                     <Phone size={12} />
-                    Appeler
+                    Commander
                   </a>
                 </div>
 

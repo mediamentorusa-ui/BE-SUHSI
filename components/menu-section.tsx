@@ -3,7 +3,8 @@
 import { useState, useMemo } from "react"
 import Image from "next/image"
 import { Search, Phone } from "lucide-react"
-import { menuCategories, PHONE_LINK, type MenuItem, type MenuSection } from "@/lib/menu-data"
+import { PHONE_LINK, type MenuItem, type MenuSection as MenuSectionType } from "@/lib/menu-data"
+import { useI18n } from "@/lib/i18n"
 
 function MenuItemRow({ item }: { item: MenuItem }) {
   return (
@@ -19,7 +20,7 @@ function MenuItemRow({ item }: { item: MenuItem }) {
   )
 }
 
-function SectionBlock({ section }: { section: MenuSection }) {
+function SectionBlock({ section }: { section: MenuSectionType }) {
   return (
     <div className="mb-4 last:mb-0">
       <div className="flex items-center gap-2 mb-2">
@@ -42,6 +43,8 @@ function SectionBlock({ section }: { section: MenuSection }) {
 export function MenuSection() {
   const [search, setSearch] = useState("")
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const { t } = useI18n()
+  const menuCategories = t.menu.categories
 
   // Filter categories based on search
   const filtered = useMemo(() => {
@@ -79,7 +82,7 @@ export function MenuSection() {
         return null
       })
       .filter(Boolean) as typeof menuCategories
-  }, [search])
+  }, [search, menuCategories])
 
   // Non-poke categories for the main menu
   const menuCats = filtered.filter((c) => c.id !== "poke-bowl")
@@ -88,9 +91,9 @@ export function MenuSection() {
     <section id="carte" className="py-12 bg-muted/40">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">La Carte</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-2">{t.menu.title}</h2>
           <p className="text-muted-foreground text-sm">
-            Consultez nos préparations, puis appelez pour commander.
+            {t.menu.description}
           </p>
         </div>
 
@@ -105,9 +108,9 @@ export function MenuSection() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Rechercher saumon, avocat, crevette…"
+            placeholder={t.menu.searchPlaceholder}
             className="w-full pl-9 pr-4 py-2.5 text-sm bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-foreground placeholder:text-muted-foreground"
-            aria-label="Rechercher dans la carte"
+            aria-label={t.menu.searchAria}
           />
         </div>
 
@@ -116,7 +119,7 @@ export function MenuSection() {
           <div
             className="flex gap-2 overflow-x-auto pb-2 mb-6 scrollbar-hide"
             role="tablist"
-            aria-label="Catégories du menu"
+            aria-label={t.menu.categoriesAria}
           >
             <button
               role="tab"
@@ -128,7 +131,7 @@ export function MenuSection() {
                   : "bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
               }`}
             >
-              Tout
+              {t.menu.all}
             </button>
             {menuCategories.filter((c) => c.id !== "poke-bowl").map((cat) => (
               <button
@@ -187,10 +190,10 @@ export function MenuSection() {
                   <a
                     href={PHONE_LINK}
                     className="ml-auto shrink-0 inline-flex items-center gap-1.5 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-xs font-medium px-3 py-1.5 rounded-lg transition-colors"
-                    aria-label={`Appeler pour commander ${cat.label}`}
+                    aria-label={`${t.menu.callCategory} ${cat.label}`}
                   >
                     <Phone size={12} />
-                    Appeler
+                    {t.common.call}
                   </a>
                 </div>
 
@@ -217,7 +220,7 @@ export function MenuSection() {
 
           {search && menuCats.length === 0 && (
             <div className="text-center py-12 text-muted-foreground text-sm">
-              Aucun résultat pour &ldquo;{search}&rdquo;
+              {t.menu.noResults} &ldquo;{search}&rdquo;
             </div>
           )}
         </div>

@@ -1,7 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import { PHONE_LINK, PHONE, ADDRESS, MAPS_LINK } from "@/lib/menu-data"
+import { useI18n } from "@/lib/i18n"
 
 export function Footer() {
+  const { t } = useI18n()
+
   return (
     <footer className="bg-foreground text-white/80 py-10">
       <div className="max-w-5xl mx-auto px-4">
@@ -11,7 +16,7 @@ export function Footer() {
             <div className="w-12 h-12 rounded-full overflow-hidden bg-black/30">
               <Image
                 src="/logo/be-sushi-logo.png"
-                alt="Logo Be Sushi Fréjus"
+                alt={t.header.logoAlt}
                 width={48}
                 height={48}
                 className="object-cover w-full h-full"
@@ -34,8 +39,7 @@ export function Footer() {
 
         {/* SEO text */}
         <p className="text-white/40 text-xs leading-relaxed text-center border-t border-white/10 pt-6">
-          Be Sushi Fréjus propose sushi, maki, california rolls, poké bowls, menus et plateaux à emporter ou en
-          livraison à Fréjus.{" "}
+          {t.footer.seoText}{" "}
           <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="underline hover:text-white/60 transition-colors">
             169 Rue Aviateurs Priol et Laporte, 83600 Fréjus.
           </a>

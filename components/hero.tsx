@@ -1,19 +1,20 @@
+"use client"
+
 import Image from "next/image"
 import { Phone, MapPin, ChevronDown } from "lucide-react"
-import {
-  PHONE_LINK,
-  MAPS_LINK,
-  DELIVERY_NOTE,
-  menuCategories,
-} from "@/lib/menu-data"
+import { PHONE_LINK, MAPS_LINK } from "@/lib/menu-data"
+import { useI18n } from "@/lib/i18n"
 
 export function Hero() {
+  const { t } = useI18n()
+  const menuCategories = t.menu.categories
+
   return (
     <>
       <section id="accueil" className="relative isolate overflow-hidden bg-[#151815] text-white">
         <Image
           src="/gallery/12-hero-sushi-closeup.jpg"
-          alt="Sushi et rolls Be Sushi"
+          alt={t.hero.imageAlt}
           fill
           sizes="100vw"
           className="-z-20 object-cover object-[58%_center] md:object-center"
@@ -27,13 +28,13 @@ export function Hero() {
         <div className="max-w-5xl mx-auto px-4 py-16 md:py-24 min-h-[34rem] md:min-h-[35rem] flex items-center">
           <div className="w-full max-w-xl text-center md:text-left">
             <p className="text-[#f28a74] text-sm font-semibold mb-3">
-              Fréjus · À emporter · Livraison
+              {t.hero.eyebrow}
             </p>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight text-balance mb-4">
-              Sushi, poké bowls & plateaux à Fréjus
+              {t.hero.title}
             </h1>
             <p className="text-white/85 text-base md:text-lg leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
-              Consultez la carte, choisissez vos envies, puis appelez pour commander à emporter ou en livraison.
+              {t.hero.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
@@ -42,13 +43,13 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-xl hover:opacity-90 active:scale-[0.98] transition text-base"
               >
                 <Phone size={18} />
-                Appeler pour commander
+                {t.common.callToOrder}
               </a>
               <a
                 href="#carte"
                 className="inline-flex items-center justify-center gap-2 bg-black/35 border border-white/40 text-white font-medium px-6 py-3 rounded-xl hover:bg-black/50 active:scale-[0.98] transition text-base"
               >
-                Voir la carte
+                {t.common.seeMenu}
                 <ChevronDown size={16} />
               </a>
               <a
@@ -58,12 +59,12 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 bg-black/35 border border-white/40 text-white font-medium px-6 py-3 rounded-xl hover:bg-black/50 active:scale-[0.98] transition text-base"
               >
                 <MapPin size={16} />
-                Itinéraire
+                {t.common.directions}
               </a>
             </div>
 
             <p className="text-white/75 text-sm mt-5">
-              À emporter / livraison · {DELIVERY_NOTE}
+              {t.hero.serviceLine} · {t.business.deliveryNote}
             </p>
           </div>
         </div>
@@ -73,14 +74,14 @@ export function Hero() {
         <div className="flex items-end justify-between gap-4 mb-6">
           <div>
             <h2 id="category-heading" className="text-2xl font-bold text-foreground">
-              Explorez la carte
+              {t.hero.categoriesTitle}
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              Choisissez une catégorie, consultez les plats, puis appelez pour commander.
+              {t.hero.categoriesDescription}
             </p>
           </div>
           <a href="#carte" className="hidden sm:inline-flex text-sm font-semibold text-primary hover:underline">
-            Toute la carte
+            {t.hero.allMenu}
           </a>
         </div>
 
@@ -89,7 +90,7 @@ export function Hero() {
             <a
               key={category.id}
               href={`#${category.id}`}
-              aria-label={`Voir la catégorie ${category.label}`}
+              aria-label={`${t.hero.categoryAria} ${category.label}`}
               className="group bg-card border border-border rounded-2xl px-3 py-3 min-h-28 flex flex-col items-center justify-center text-center hover:border-primary/50 hover:-translate-y-0.5 active:scale-[0.98] active:bg-muted transition-all"
             >
               <span className="w-14 h-14 relative mb-2">

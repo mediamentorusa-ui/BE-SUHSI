@@ -1,8 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import { Phone } from "lucide-react"
-import { menuCategories, PHONE_LINK } from "@/lib/menu-data"
-
-const pokeCat = menuCategories.find((c) => c.id === "poke-bowl")!
+import { PHONE_LINK } from "@/lib/menu-data"
+import { useI18n } from "@/lib/i18n"
 
 type TagListProps = {
   title: string
@@ -33,6 +34,9 @@ function TagList({ title, items, variant = "default" }: TagListProps) {
 }
 
 export function PokeBowlSection() {
+  const { t } = useI18n()
+  const pokeCat = t.menu.categories.find((c) => c.id === "poke-bowl")
+
   if (!pokeCat) return null
 
   return (
@@ -44,14 +48,14 @@ export function PokeBowlSection() {
             <div className="w-48 h-48 relative mx-auto lg:mx-0 mb-4">
               <Image
                 src="/icons/10-poke-bowl.png"
-                alt="Poké bowl saumon avocat"
+                alt={t.poke.imageAlt}
                 fill
                 className="object-contain"
               />
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Compose ton Poké</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">{t.poke.title}</h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Choisissez vos ingrédients, notez votre composition, puis appelez-nous pour commander.
+              {t.poke.description}
             </p>
 
             {/* Sizes */}
@@ -77,21 +81,21 @@ export function PokeBowlSection() {
               className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm"
             >
               <Phone size={15} />
-              Appeler pour commander
+              {t.common.callToOrder}
             </a>
           </div>
 
           {/* Right: composition grid */}
           <div className="flex-1 bg-card border border-border rounded-2xl p-5 space-y-5">
-            <TagList title="Protéines" items={pokeCat.proteins ?? []} variant="accent" />
-            <TagList title="Veggies" items={pokeCat.veggies ?? []} />
-            <TagList title="Toppings" items={pokeCat.toppings ?? []} />
-            <TagList title="Sauces" items={pokeCat.sauces ?? []} />
+            <TagList title={t.poke.proteins} items={pokeCat.proteins ?? []} variant="accent" />
+            <TagList title={t.poke.veggies} items={pokeCat.veggies ?? []} />
+            <TagList title={t.poke.toppings} items={pokeCat.toppings ?? []} />
+            <TagList title={t.poke.sauces} items={pokeCat.sauces ?? []} />
 
             {/* Supplements */}
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                Suppléments
+                {t.poke.supplements}
               </p>
               <div className="grid grid-cols-2 gap-1.5">
                 {pokeCat.supplements?.map((s) => (
@@ -109,7 +113,7 @@ export function PokeBowlSection() {
             {/* Extras */}
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                Extras & Yakitori
+                {t.poke.extras}
               </p>
               <div className="space-y-2">
                 {pokeCat.extras?.map((e) => (

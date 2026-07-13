@@ -1,13 +1,18 @@
+"use client"
+
 import { Phone, MapPin, Truck } from "lucide-react"
-import { PHONE, PHONE_LINK, ADDRESS, MAPS_LINK, DELIVERY_NOTE } from "@/lib/menu-data"
+import { PHONE, PHONE_LINK, ADDRESS, MAPS_LINK } from "@/lib/menu-data"
+import { useI18n } from "@/lib/i18n"
 
 export function ContactSection() {
+  const { t } = useI18n()
+
   return (
     <section id="contact" className="py-12 bg-muted/40">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">Contact & Accès</h2>
-          <p className="text-sm text-muted-foreground">Retrouvez-nous à Fréjus.</p>
+          <h2 className="text-2xl font-bold text-foreground mb-2">{t.contact.title}</h2>
+          <p className="text-sm text-muted-foreground">{t.contact.description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -17,11 +22,11 @@ export function ContactSection() {
               <Phone size={20} className="text-primary" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">Téléphone</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">{t.contact.phone}</p>
               <a
                 href={PHONE_LINK}
                 className="text-lg font-bold text-foreground hover:text-primary transition-colors"
-                aria-label={`Appeler Be Sushi au ${PHONE}`}
+                aria-label={`${t.contact.callAria} ${PHONE}`}
               >
                 {PHONE}
               </a>
@@ -31,7 +36,7 @@ export function ContactSection() {
               className="mt-auto w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground text-sm font-semibold px-4 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
             >
               <Phone size={14} />
-              Appeler maintenant
+              {t.common.callNow}
             </a>
           </div>
 
@@ -41,7 +46,7 @@ export function ContactSection() {
               <MapPin size={20} className="text-primary" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">Adresse</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">{t.contact.address}</p>
               <address className="not-italic text-sm font-medium text-foreground leading-relaxed">
                 {ADDRESS}
               </address>
@@ -53,7 +58,7 @@ export function ContactSection() {
               className="mt-auto w-full inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground text-sm font-semibold px-4 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
             >
               <MapPin size={14} />
-              Voir sur Maps
+              {t.common.viewOnMaps}
             </a>
           </div>
 
@@ -63,10 +68,10 @@ export function ContactSection() {
               <Truck size={20} className="text-primary" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">Service</p>
-              <p className="text-sm font-semibold text-foreground">À emporter / livraison</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">{t.contact.service}</p>
+              <p className="text-sm font-semibold text-foreground">{t.business.takeawayDelivery}</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {DELIVERY_NOTE}
+                {t.business.deliveryNote}
               </p>
             </div>
             <a
@@ -74,7 +79,7 @@ export function ContactSection() {
               className="mt-auto w-full inline-flex items-center justify-center gap-2 border border-border text-foreground text-sm font-medium px-4 py-2.5 rounded-xl hover:border-primary/40 hover:text-primary transition-colors"
             >
               <Phone size={14} />
-              Appeler pour commander
+              {t.common.callToOrder}
             </a>
           </div>
         </div>
